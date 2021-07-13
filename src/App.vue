@@ -1,5 +1,5 @@
 <template>
-  <vc-app />
+  <vc-app :branding="branding" />
 </template>
 
 <script lang="ts">
@@ -7,6 +7,15 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "App",
+
+  setup() {
+    return {
+      branding: {
+        logo: "/assets/logo.svg",
+        version: "0.0.1b",
+      },
+    };
+  },
 });
 </script>
 
@@ -15,6 +24,6 @@ html,
 body,
 #app {
   font-family: "Roboto";
-  font-size: var(--font-size_m);
+  font-size: var(--font-size-m);
 }
 </style>
